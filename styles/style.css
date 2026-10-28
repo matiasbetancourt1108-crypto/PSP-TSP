@@ -1,3 +1,4 @@
+/* ============ BASE ============ */
 * {
     margin: 0;
     padding: 0;
@@ -7,56 +8,75 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #F4F4F4;
-    color: #24282B;
+}
+
+/* ============ BOTONES ============ */
+button,
+.btn {
+    background-color: #3B82F6;
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #2563EB;
 }
 
 /* ============ HEADER ============ */
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    background-color: #24282B;
-    color: white;
-    border-bottom: 5px solid #1293D4;
+    background-color: #4A5568;
+    color: #fff;
     height: 100px;
+    padding: 0 60px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
 }
 
 header .logo img {
-    height: 50px;
+    height: 45px;
 }
 
 header nav ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: center;
     gap: 30px;
-}
-
-header nav ul li {
     list-style: none;
 }
 
 header nav ul li a {
     text-decoration: none;
-    color: white;
-    text-transform: uppercase;
+    color: #fff;
     font-size: 15px;
+    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 header nav ul li a:hover,
 header nav ul li a.active {
-    color: #1293D4;
+    color: #3B82F6;
 }
 
 /* ============ HERO ============ */
 .hero {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    background-color: #24282B;
-    color: white;
-    padding: 60px 80px;
-    min-height: 480px;
+    background-color: #4A5568;
+    color: #fff;
+    padding: 60px;
+    min-height: 500px;
 }
 
 .hero-text h1 {
@@ -79,52 +99,56 @@ header nav ul li a.active {
 .hero-btns {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-button,
-.btn {
-    background-color: #E8491D;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover,
-.btn:hover {
-    background-color: #d92a0b;
-}
-
-.btn-link {
+.hero-btns .btn-link {
     background: none;
-    color: white;
     border: none;
+    color: #fff;
     text-decoration: underline;
     font-size: 16px;
     cursor: pointer;
 }
 
-/* ============ SECCIONES COMUNES ============ */
-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
+/* ============ SECCIÓN CLIENTES ============ */
+.clients {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    background-color: #fff;
+    padding: 40px 60px;
+    flex-wrap: wrap;
 }
 
-/* ============ SECCION WORKS (CSS GRID) ============ */
+.clients img {
+    height: 40px;
+    opacity: 0.6;
+}
+
+.clients span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #24282B;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+/* ============ SECCIÓN WORKS (CSS GRID) ============ */
 .works {
-    padding: 60px 80px;
+    padding: 60px;
 }
 
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
 .work-item {
-    background-color: #fff;
+    background: #fff;
 }
 
 .work-item img {
@@ -135,9 +159,9 @@ section h2 {
     padding: 15px;
 }
 
-/* ============ FEATURES (FLEXBOX) ============ */
+/* ============ SECCIÓN FEATURES (FLEXBOX) ============ */
 .features {
-    padding: 60px 80px;
+    padding: 60px;
 }
 
 .features-grid {
@@ -150,18 +174,25 @@ section h2 {
 .feature {
     flex: 1 1 280px;
     max-width: 340px;
-    background-color: #fff;
+    background: #fff;
     text-align: center;
-    padding: 30px 20px;
+    padding: 40px 20px;
 }
 
-.feature img {
+.feature .icon {
+    width: 90px;
     height: 90px;
+    border: 2px solid #E6E6E6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
 }
 
 .feature h3 {
-    margin: 15px 0;
     font-size: 22px;
+    margin: 15px 0;
 }
 
 .feature p {
@@ -169,11 +200,7 @@ section h2 {
     margin-bottom: 15px;
 }
 
-/* ============ BLOG ============ */
-.blog {
-    padding: 60px 80px;
-}
-
+/* ============ BLOG (FLEXBOX) ============ */
 .blog-grid {
     display: flex;
     gap: 30px;
@@ -181,12 +208,39 @@ section h2 {
 
 .blog-item {
     flex: 1;
-    background-color: #fff;
-    padding: 30px;
+    display: flex;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+}
+
+.blog-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
 }
 
 .blog-item h3 {
-    margin: 15px 0;
+    margin-bottom: 10px;
+}
+
+/* ============ SECCIONES COMUNES ============ */
+section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* ============ CTA ============ */
+.cta {
+    background: #4A5568;
+    text-align: center;
+    padding: 60px;
+    color: #fff;
+}
+
+.cta h2 {
+    color: #fff;
+    margin-bottom: 30px;
 }
 
 /* ============ FOOTER ============ */
@@ -194,10 +248,10 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #24282B;
-    color: white;
+    background: #24282B;
+    color: #fff;
     min-height: 80px;
-    padding: 0 40px;
+    padding: 0 60px;
     flex-wrap: wrap;
 }
 
@@ -206,10 +260,10 @@ footer .social img {
     margin: 0 8px;
 }
 
-/* ============ PÁGINAS DE CONTENIDO ============ */
+/* ============ PÁGINAS INTERNAS ============ */
 .page-hero {
-    background-color: #24282B;
-    color: white;
+    background: #4A5568;
+    color: #fff;
     text-align: center;
     padding: 70px 40px;
 }
@@ -231,7 +285,7 @@ footer .social img {
     justify-content: space-around;
     align-items: center;
     gap: 60px;
-    padding: 60px 80px;
+    padding: 60px;
 }
 
 .content-text {
@@ -260,7 +314,7 @@ footer .social img {
 }
 
 .phases li {
-    background-color: #fff;
+    background: #fff;
     padding: 20px;
     margin-bottom: 15px;
 }
@@ -271,48 +325,25 @@ footer .social img {
 
 /* ============ COMPARATIVA (CSS GRID) ============ */
 .compare {
-    padding: 60px 80px;
+    padding: 60px;
 }
 
 .compare-grid {
     display: grid;
     grid-template-columns: 180px 1fr 1fr;
     gap: 1px;
-    background-color: #d6d6d6;
+    background: #d6d6d6;
     border: 1px solid #d6d6d6;
 }
 
 .compare-cell {
-    background-color: #fff;
+    background: #fff;
     padding: 20px;
 }
 
 .compare-head {
-    background-color: #E6E6E6;
+    background: #E6E6E6;
     font-weight: bold;
-}
-
-/* ============ CTA ============ */
-.cta {
-    background-color: #24282B;
-    text-align: center;
-    padding: 60px 40px;
-    color: white;
-}
-
-.cta h2 {
-    color: white;
-    margin-bottom: 30px;
-}
-
-.cta a {
-    color: white;
-    text-decoration: none;
-}
-
-.cta .btn,
-.cta button {
-    background-color: #E8491D;
 }
 
 /* ============ CONTACTO (FLEXBOX) ============ */
@@ -320,7 +351,7 @@ footer .social img {
     display: flex;
     justify-content: center;
     gap: 60px;
-    padding: 60px 80px;
+    padding: 60px;
 }
 
 .contacto-info {
@@ -339,7 +370,7 @@ footer .social img {
 .contacto-form {
     flex: 1;
     max-width: 500px;
-    background-color: #fff;
+    background: #fff;
     padding: 30px;
 }
 
@@ -361,7 +392,7 @@ footer .social img {
 
 .submitBox {
     width: 100%;
-    background-color: #E8491D;
+    background: #3B82F6;
     border: none;
     color: white;
     padding: 12px;
