@@ -5,34 +5,24 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #F4F4F4;
+    color: #333;
+    line-height: 1.6;
 }
 
-button,
-.bt {
-    background-color: #3B82F6;
-    color: #fff;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover,
-.bt:hover {
-    background-color: #2563EB;
-}
-
+/* Header */
 .hd {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4A5568;
+    background-color: #4C5C67;
     color: #fff;
-    height: 100px;
+    height: 90px;
     padding: 0 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .hd .lg {
@@ -44,69 +34,115 @@ button:hover,
     height: 45px;
 }
 
+.hd .lg .logo-text {
+    font-family: 'Segoe UI', cursive;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
 .hd .nv {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 30px;
+    gap: 12px;
 }
 
 .hd .nv ul {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 30px;
+    gap: 12px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .hd .nv ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: block;
+    transition: all 0.3s ease;
 }
 
-.hd .nv ul li a:hover,
-.hd .nv ul li a.active {
-    color: #3B82F6;
+.hd .nv ul li a:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
 }
 
+.hd .nv .nv-activo a {
+    background: linear-gradient(to bottom, #39424A, #455159);
+    color: #fff;
+    border-top: 1px solid #272E33;
+    border-bottom: 1px solid #67737D;
+}
+
+/*  Hero  */
 .he {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #4A5568;
+    flex-direction: row;
+    background-color: #4C5C67;
     color: #fff;
-    padding: 60px;
-    min-height: 500px;
+    gap: 8%;
+    padding-top: 50px;
 }
 
 .het {
     flex: 1;
+    max-width: 600px;
 }
 
 .het h1 {
-    font-size: 44px;
+    font-size: 48px;
     margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .het p {
     color: #C5CBD3;
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.7;
+    max-width: 560px;
     margin-bottom: 30px;
-    max-width: 580px;
 }
 
 .hei img {
-    max-height: 420px;
+    max-height: 520px;
+    width: auto;
 }
 
 .heb {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.heb button {
+    background: linear-gradient(to bottom, #439ED5, #378ACD);
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.heb button:hover {
+    background-color: #2563EB;
+}
+
+.heb .or {
+    color: #C5CBD3;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .heb .btl {
@@ -115,161 +151,107 @@ button:hover,
     color: #fff;
     text-decoration: underline;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
+    padding: 0;
+}
+.heb .btl img {
+    margin-right: 8px;
 }
 
+/* Clientes / Logos */
 .cl {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    gap: 30px;
-    background-color: #fff;
-    padding: 40px 60px;
+    background-color: #F8F8F8;
+    padding: 40px 0;
+    gap: 10%;
     flex-wrap: wrap;
+    border-bottom: 1px solid #E8E8E8;
 }
 
 .cl img {
     height: 40px;
-    opacity: 0.6;
+    width: auto;
+    opacity: 0.55;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
 }
 
-.cl span {
-    font-size: 24px;
-    font-weight: bold;
-    color: #24282B;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.6;
+.cl img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
 }
 
-.wd {
-    padding: 60px;
-}
-
-.wdg {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.wi {
-    background: #fff;
-}
-
-.wi img {
-    width: 100%;
-}
-
-.wi h3 {
-    padding: 15px;
-}
-
+/* 3 Caracteristicas */
 .fe {
-    padding: 60px;
+    padding: 70px 60px;
+    background-color: #fff;
+}
+
+.fe h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
 }
 
 .feq {
     display: flex;
     justify-content: space-around;
-    gap: 30px;
     flex-wrap: wrap;
 }
 
 .fa {
-    flex: 1 1 280px;
-    max-width: 340px;
-    background: #fff;
+    flex: 1 1 260px;
+    padding: 0px 50px;
     text-align: center;
-    padding: 40px 20px;
 }
 
-.fa img {
-    height: 80px;
-}
-
-.fa .ic {
-    width: 90px;
-    height: 90px;
-    border: 2px solid #E6E6E6;
-    border-radius: 50%;
+.icon-circle {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
+    margin: 0 auto 25px;
+    color: #7A8794;
+    font-size: 36px;
+}
+
+.icon-circle img {
+    height: 50%;
 }
 
 .fa h3 {
-    font-size: 22px;
-    margin: 15px 0;
+    font-size: 20px;
+    margin-bottom: 14px;
+    color: #333;
 }
 
 .fa p {
     color: #5A6470;
-    margin-bottom: 15px;
+    font-size: 15px;
+    margin-bottom: 24px;
 }
 
-.bl {
-    padding: 60px;
-}
-
-.blg {
-    display: flex;
-    gap: 30px;
-}
-
-.bi {
-    flex: 1;
-    display: flex;
-    gap: 20px;
-    background: #fff;
-    padding: 20px;
-}
-
-.bi img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-}
-
-.bi h3 {
-    margin-bottom: 10px;
-}
-
-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
-.ct {
-    background: #4A5568;
-    text-align: center;
-    padding: 60px;
+.fa button {
+    background: linear-gradient(to bottom, #57A0D2, #498CCA);
     color: #fff;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.ct h2 {
-    color: #fff;
-    margin-bottom: 30px;
+.fa button:hover {
+    background: linear-gradient(to bottom, #4385b1, #498CCA);
 }
 
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #24282B;
-    color: #fff;
-    min-height: 80px;
-    padding: 0 60px;
-    flex-wrap: wrap;
-}
-
-footer .so img {
-    height: 30px;
-    margin: 0 8px;
-}
-
+/*Seccion generica (paginas internas) */
 .ph {
-    background: #4A5568;
+    background: #4C5C67;
     color: #fff;
     text-align: center;
     padding: 70px 40px;
@@ -293,18 +275,29 @@ footer .so img {
     align-items: center;
     gap: 60px;
     padding: 60px;
+    flex-wrap: wrap;
 }
 
 .co .cot {
     flex: 1;
+    min-width: 300px;
 }
 
 .co .cot h2 {
     margin-top: 30px;
+    font-size: 24px;
+    color: #333;
 }
 
 .co .cot h2:first-child {
     margin-top: 0;
+}
+
+.co .cot p {
+    color: #5A6470;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 
 .co .cim {
@@ -314,24 +307,95 @@ footer .so img {
 
 .co .cim img {
     width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 .fas {
     list-style: none;
+    padding: 0;
+    margin: 20px 0;
 }
 
 .fas li {
     background: #fff;
     padding: 20px;
     margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .fas li h3 {
     margin-bottom: 10px;
+    color: #333;
+    font-size: 17px;
 }
 
+.fas li p {
+    color: #5A6470;
+    font-size: 15px;
+    margin: 0;
+}
+
+/*  Llamado a la accion  */
+.ct {
+    background: #4C5C67;
+    text-align: center;
+    padding: 60px;
+    color: #fff;
+}
+
+.ct h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+.ct a button {
+    background: linear-gradient(to bottom, #439ED5, #378ACD);
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.ct a button:hover {
+    background-color: #2563EB;
+}
+
+/*  Footer  */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    min-height: 80px;
+    padding: 0 60px;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid #E8E8E8;
+}
+
+footer .so img {
+    height: 30px;
+    margin: 0 8px;
+}
+
+/* ---------- Tabla comparativa ---------- */
 .cmp {
     padding: 60px;
+}
+
+.cmp h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #333;
 }
 
 .cmg {
@@ -340,23 +404,30 @@ footer .so img {
     gap: 1px;
     background: #d6d6d6;
     border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .cel {
     background: #fff;
-    padding: 20px;
+    padding: 16px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .che {
     background: #E6E6E6;
     font-weight: bold;
+    color: #333;
 }
 
+/* ---------- Contacto ---------- */
 .cc {
     display: flex;
     justify-content: center;
     gap: 60px;
     padding: 60px;
+    flex-wrap: wrap;
 }
 
 .ci {
@@ -365,11 +436,16 @@ footer .so img {
 }
 
 .ci h2 {
-    margin-top: 30px;
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.ci h2:first-child {
-    margin-top: 0;
+.ci p {
+    color: #5A6470;
+    font-size: 16px;
+    margin-bottom: 15px;
 }
 
 .cf {
@@ -377,6 +453,15 @@ footer .so img {
     max-width: 500px;
     background: #fff;
     padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.cf h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .fg {
@@ -389,10 +474,14 @@ footer .so img {
     padding: 10px;
     border: 1px solid #d6d6d6;
     margin-bottom: 5px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
 }
 
 .fg textarea {
     height: 120px;
+    resize: vertical;
 }
 
 .sb {
@@ -401,4 +490,300 @@ footer .so img {
     border: none;
     color: white;
     padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.sb:hover {
+    background: #2563EB;
+}
+
+/* ---------- Utilidades ---------- */
+.wd {
+    padding: 60px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .hd {
+        padding: 0 20px;
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+        padding-bottom: 15px;
+    }
+    .he {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    .het, .hei {
+        max-width: 100%;
+    }
+    .het h1 {
+        font-size: 34px;
+    }
+    .heb {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .cl {
+        gap: 40px;
+    }
+    .fe {
+        padding: 50px 20px;
+    }
+    .feq {
+        gap: 30px;
+    }
+    .fa {
+        max-width: 100%;
+    }
+    .co, .cc {
+        padding: 40px 20px;
+        flex-direction: column;
+    }
+    .cmp {
+        padding: 40px 20px;
+    }
+    .cmg {
+        grid-template-columns: 1fr;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    footer .so {
+        margin-top: 15px;
+    }
+    .ph {
+        padding: 50px 20px;
+    }
+    .ph h1 {
+        font-size: 32px;
+    }
+    .ct {
+        padding: 50px 20px;
+    }
+}
+
+/* ---------- Breakpoint 480px ---------- */
+@media (max-width: 480px) {
+    .hd {
+        padding: 0 15px;
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 12px;
+    }
+
+    .hd .lg img {
+        height: 38px;
+    }
+
+    .hd .nv ul {
+        gap: 8px;
+    }
+
+    .hd .nv ul li a {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .he {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 15px;
+        gap: 30px;
+    }
+
+    .het, .hei {
+        max-width: 100%;
+    }
+
+    .het h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .het p {
+        font-size: 16px;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hei img {
+        max-height: 320px;
+    }
+
+    .heb {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .heb button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .heb .or {
+        font-size: 14px;
+    }
+
+    .heb .btl {
+        font-size: 14px;
+    }
+
+    .cl {
+        padding: 30px 0;
+        gap: 30px;
+    }
+
+    .cl img {
+        height: 32px;
+    }
+
+    .fe {
+        padding: 40px 15px;
+    }
+
+    .fe h2 {
+        font-size: 26px;
+        margin-bottom: 35px;
+    }
+
+    .feq {
+        gap: 25px;
+    }
+
+    .fa {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+
+    .fa h3 {
+        font-size: 18px;
+    }
+
+    .fa p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .fa button {
+        padding: 12px 22px;
+        font-size: 13px;
+    }
+
+    .ph {
+        padding: 40px 15px;
+    }
+
+    .ph h1 {
+        font-size: 28px;
+    }
+
+    .ph p {
+        font-size: 16px;
+    }
+
+    .co,
+    .cc {
+        padding: 35px 15px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .co .cot,
+    .co .cim,
+    .ci,
+    .cf {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .co .cot h2,
+    .ci h2,
+    .cf h2 {
+        font-size: 22px;
+        margin-top: 0;
+    }
+
+    .co .cot p,
+    .ci p {
+        font-size: 15px;
+    }
+
+    .fas li {
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    .fas li h3 {
+        font-size: 16px;
+    }
+
+    .ct {
+        padding: 40px 15px;
+    }
+
+    .ct h2 {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .ct a button {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+
+    footer {
+        padding: 25px 15px;
+        gap: 15px;
+    }
+
+    footer .so img {
+        height: 26px;
+        margin: 0 6px;
+    }
+
+    .cmp {
+        padding: 35px 15px;
+    }
+
+    .cmp h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .cmg {
+        grid-template-columns: 1fr;
+        gap: 1px;
+    }
+
+    .cel {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .wd {
+        padding: 40px 15px;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 35px;
+    }
 }
